@@ -1,0 +1,649 @@
+
+/* =====================================
+   1. GLOBAL SETTINGS
+===================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: #f1f5fb;
+    color: #26364a;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+button, input, select, textarea {
+    font-family: inherit;
+}
+
+/* =====================================
+   2. HEADER
+===================================== */
+
+#header {
+    width: 100%;
+    background: linear-gradient(135deg, #071b3a, #123f73);
+    color: white;
+    text-align: center;
+    padding: 35px 20px;
+}
+
+#header h1 {
+    font-size: clamp(23px, 4vw, 36px);
+    font-weight: 700;
+    margin-bottom: 8px;
+    line-height: 1.3;
+}
+
+#header p {
+    font-size: 17px;
+    color: #dceaff;
+}
+
+/* =====================================
+   3. NAVIGATION BAR
+===================================== */
+
+#navigation {
+    width: 100%;
+    background: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 20px;
+    gap: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+/* Supports both direct links and ul/li navigation */
+
+#navigation ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    list-style: none;
+    gap: 12px;
+    width: 100%;
+}
+
+#navigation li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#navigation a {
+    display: inline-block;
+    text-decoration: none;
+    color: #102f56;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 10px 20px;
+    border-radius: 7px;
+    transition: all 0.3s ease;
+}
+
+#navigation a:hover,
+#navigation a.active {
+    background: #123f73;
+    color: white;
+}
+
+/* =====================================
+   4. MAIN CONTENT ALIGNMENT
+===================================== */
+
+#app {
+    width: 92%;
+    max-width: 1150px;
+    min-height: 500px;
+    margin: 35px auto;
+    padding: 0 10px;
+}
+
+#app h2,
+.section h2 {
+    color: #0c2d54;
+    font-size: 27px;
+    margin-bottom: 22px;
+    padding-left: 13px;
+    border-left: 5px solid #d6a943;
+}
+
+.section {
+    width: 100%;
+    margin-bottom: 35px;
+}
+
+/* =====================================
+   5. HOME PAGE HERO
+===================================== */
+
+.hero {
+    width: 100%;
+    background: linear-gradient(120deg, #071b3a, #1763a6);
+    color: white;
+    text-align: center;
+    padding: 75px 25px;
+    border-radius: 14px;
+    margin-bottom: 35px;
+    box-shadow: 0 8px 22px rgba(7,27,58,0.18);
+}
+
+.hero h2 {
+    color: white !important;
+    border: none !important;
+    padding: 0 !important;
+    font-size: clamp(25px, 4vw, 36px);
+    margin-bottom: 15px;
+}
+
+.hero p {
+    font-size: 18px;
+    color: #e3efff;
+    margin-bottom: 22px;
+}
+
+.hero a {
+    display: inline-block;
+    background: #d6a943;
+    color: #071b3a !important;
+    text-decoration: none;
+    padding: 12px 25px;
+    border-radius: 7px;
+    font-weight: 700;
+    transition: 0.3s;
+}
+
+.hero a:hover {
+    background: #f0c96c;
+    transform: translateY(-3px);
+}
+
+/* =====================================
+   6. CARDS AND GRID
+===================================== */
+
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 22px;
+    width: 100%;
+    margin: 22px 0;
+}
+
+.card {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    border: 1px solid #e1e9f3;
+    border-top: 4px solid #174f85;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+    transition: 0.3s;
+    min-width: 0;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 9px 22px rgba(0,0,0,0.12);
+}
+
+.card h3 {
+    color: #123f73;
+    font-size: 20px;
+    margin-bottom: 12px;
+}
+
+.card p {
+    color: #53657a;
+    margin-bottom: 9px;
+    overflow-wrap: anywhere;
+}
+
+/* =====================================
+   7. DEPARTMENT SLICER
+===================================== */
+
+.filter-box {
+    background: white;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 10px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.06);
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.filter-box label {
+    font-weight: 700;
+    color: #123f73;
+}
+
+.filter-box select {
+    min-width: 230px;
+    max-width: 100%;
+    padding: 12px;
+    border: 1px solid #b8c9df;
+    border-radius: 7px;
+    background: #f8fbff;
+    outline: none;
+    cursor: pointer;
+}
+
+.filter-box select:focus {
+    border-color: #1769aa;
+}
+
+.department-card {
+    border-top: 4px solid #d6a943;
+}
+
+/* =====================================
+   8. ADMISSIONS PAGE
+===================================== */
+
+.notice {
+    background: #e6f0fc;
+    color: #123f73;
+    padding: 18px;
+    border-left: 5px solid #d6a943;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+#app ol,
+#app ul {
+    padding-left: 25px;
+}
+
+#app li {
+    margin-bottom: 10px;
+}
+
+/* =====================================
+   9. CONTACT FORM
+===================================== */
+
+#enquiryForm {
+    width: 100%;
+    max-width: 800px;
+    margin: 20px auto 35px;
+    padding: 30px;
+    background: white;
+    border-radius: 13px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.07);
+}
+
+#enquiryForm label {
+    display: block;
+    color: #123f73;
+    font-weight: 600;
+    margin: 16px 0 7px;
+}
+
+#enquiryForm input,
+#enquiryForm select,
+#enquiryForm textarea {
+    display: block;
+    width: 100%;
+    padding: 13px 15px;
+    font-size: 15px;
+    color: #26364a;
+    background: #f8fbff;
+    border: 1px solid #cbd8e8;
+    border-radius: 7px;
+    outline: none;
+    transition: 0.3s;
+}
+
+#enquiryForm input:focus,
+#enquiryForm select:focus,
+#enquiryForm textarea:focus {
+    border-color: #1769aa;
+    box-shadow: 0 0 0 3px rgba(23,105,170,0.12);
+}
+
+#enquiryForm textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.form-buttons {
+    display: flex;
+    gap: 12px;
+    margin-top: 22px;
+    flex-wrap: wrap;
+}
+
+.form-buttons button {
+    background: #123f73;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 7px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.form-buttons button:hover {
+    background: #1769aa;
+    transform: translateY(-2px);
+}
+
+.form-buttons button[type="reset"] {
+    background: #64748b;
+}
+
+.form-buttons button[type="reset"]:hover {
+    background: #475569;
+}
+
+/* =====================================
+   10. SAVED ENQUIRY DETAILS
+===================================== */
+
+#savedEnquiries {
+    width: 100%;
+}
+
+.enquiry-card {
+    margin: 18px 0;
+    border-left: 5px solid #d6a943;
+}
+
+.enquiry-card h3 {
+    color: #123f73;
+}
+
+.enquiry-card button {
+    background: #b42332;
+    color: white;
+    border: none;
+    padding: 9px 18px;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.enquiry-card button:hover {
+    background: #8f1725;
+}
+
+.success {
+    color: #16803d;
+    font-weight: 700;
+    margin-top: 12px;
+}
+
+.error {
+    color: #c62828;
+    font-weight: 700;
+    margin-top: 12px;
+}
+
+/* =====================================
+   11. TABLES
+===================================== */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    margin: 20px 0;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+th {
+    background: #123f73;
+    color: white;
+    padding: 13px;
+    text-align: left;
+}
+
+td {
+    padding: 12px;
+    border-bottom: 1px solid #e1e9f3;
+}
+
+tr:hover td {
+    background: #edf4fc;
+}
+
+/* =====================================
+   12. FOOTER
+===================================== */
+
+#footer {
+    width: 100%;
+    background: #071b3a;
+    color: white;
+    text-align: center;
+    padding: 28px 15px;
+    margin-top: 45px;
+}
+
+#footer p {
+    color: #dceaff;
+    margin: 5px 0;
+}
+
+/* =====================================
+   13. RESPONSIVE DESIGN
+===================================== */
+
+@media (max-width: 768px) {
+
+    #header {
+        padding: 27px 15px;
+    }
+
+    #header p {
+        font-size: 14px;
+    }
+
+    #navigation {
+        position: static;
+        padding: 12px;
+    }
+
+    #navigation ul {
+        gap: 5px;
+    }
+
+    #navigation a {
+        padding: 8px 12px;
+        font-size: 14px;
+    }
+
+    #app {
+        width: 94%;
+        margin: 25px auto;
+    }
+
+    .hero {
+        padding: 45px 18px;
+    }
+
+    .card-container {
+        grid-template-columns: 1fr;
+    }
+
+    #enquiryForm {
+        padding: 22px;
+    }
+
+    .filter-box {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .filter-box select {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+
+    #header h1 {
+        font-size: 22px;
+    }
+
+    #navigation a {
+        font-size: 12px;
+        padding: 7px 9px;
+    }
+
+    #app h2,
+    .section h2 {
+        font-size: 22px;
+    }
+
+    .form-buttons {
+        flex-direction: column;
+    }
+
+    .form-buttons button {
+        width: 100%;
+    }
+}
+
+/* COLLEGE HEADER WITH LOGO */
+
+#header {
+    background: linear-gradient(135deg, #071b3a, #123f73);
+    color: white;
+    padding: 25px 35px;
+}
+
+.header-content {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+
+.college-logo {
+    width: 110px;
+    height: 110px;
+    object-fit: contain;
+    background: white;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+.college-title {
+    text-align: left;
+}
+
+.college-title h1 {
+    font-size: 30px;
+    margin-bottom: 8px;
+}
+
+.college-title p {
+    font-size: 16px;
+    color: #dceaff;
+}
+
+@media (max-width: 650px) {
+    .header-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 12px;
+    }
+
+    .college-title {
+        text-align: center;
+    }
+
+    .college-title h1 {
+        font-size: 22px;
+    }
+
+    .college-logo {
+        width: 85px;
+        height: 85px;
+    }
+}
+
+
+/* COLLEGE HEADER WITH LOGO */
+
+#header {
+    background: linear-gradient(135deg, #071b3a, #123f73);
+    color: white;
+    padding: 25px 35px;
+}
+
+.header-content {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+
+.college-logo {
+    width: 110px;
+    height: 110px;
+    object-fit: contain;
+    background: white;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+.college-title {
+    text-align: left;
+}
+
+.college-title h1 {
+    font-size: 30px;
+    margin-bottom: 8px;
+}
+
+.college-title p {
+    font-size: 16px;
+    color: #dceaff;
+}
+
+@media (max-width: 650px) {
+    .header-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 12px;
+    }
+
+    .college-title {
+        text-align: center;
+    }
+
+    .college-title h1 {
+        font-size: 22px;
+    }
+
+    .college-logo {
+        width: 85px;
+        height: 85px;
+    }
+}

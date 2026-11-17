@@ -1,0 +1,29 @@
+
+{
+    "departments": [
+        {
+            "name": "AI and Data Science",
+            "description": "Study artificial intelligence, machine learning and data science.",
+            "intake": 120,
+            "courses": ["Artificial Intelligence", "Machine Learning", "Data Science"]
+        },
+        {
+            "name": "Computer Engineering",
+            "description": "Study programming, software development and computer systems.",
+            "intake": 120,
+            "courses": ["C++", "Java", "Database Management"]
+        },
+        {
+            "name": "Mechanical Engineering",
+            "description": "Study machines, manufacturing and engineering design.",
+            "intake": 120,
+            "courses": ["Thermodynamics", "Manufacturing", "Design"]
+        },
+        {
+            "name": "Electronics Engineering",
+            "description": "Study electronic circuits and communication systems.",
+            "intake": 60,
+            "courses": ["Digital Electronics", "Microprocessors", "Communication"]
+        }
+    ]
+}

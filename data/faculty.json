@@ -1,0 +1,29 @@
+
+{
+    "faculty": [
+        {
+            "name": "Dr. Rahul Sharma",
+            "department": "AI and Data Science",
+            "designation": "Professor",
+            "qualification": "Ph.D."
+        },
+        {
+            "name": "Prof. Priya Patil",
+            "department": "Computer Engineering",
+            "designation": "Assistant Professor",
+            "qualification": "M.Tech"
+        },
+        {
+            "name": "Dr. Amit Deshmukh",
+            "department": "Mechanical Engineering",
+            "designation": "Professor",
+            "qualification": "Ph.D."
+        },
+        {
+            "name": "Prof. Sneha Kulkarni",
+            "department": "Electronics Engineering",
+            "designation": "Assistant Professor",
+            "qualification": "M.E."
+        }
+    ]
+}
